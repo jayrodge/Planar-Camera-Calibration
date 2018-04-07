@@ -203,7 +203,6 @@ def Calibrate(world_points,img_points,RANSAC = []):
 			H = estimateHomograpy(img_points[i],pis)
 			H_list.append(H)
 
-
 	# Compute V
 	vec = []
 	for H in H_list:
@@ -347,7 +346,6 @@ def ransac(img_points,world_points, n,d_max, P, w, random_seed=1):
 		K = round((math.log(1-P))/(math.log(1-(w**N))))
 		count +=1
 
-
 	print('took iterations:', count+1, 'best H:', best_H, 'best number of inliers:', best_d)
 	return best_H
 
@@ -359,6 +357,7 @@ def getRANSACConfig():
 	p = float(config.readline().split('=')[1])
 	w = float(config.readline().split('=')[1])
 	return n,d,p,w
+
 
 def main():
 	def help():	
@@ -415,6 +414,7 @@ def main():
 		pass
 	
 	pass
+
 
 if __name__ == '__main__':
 	print(__doc__)
